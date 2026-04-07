@@ -5,105 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelDB Studio | Vanguardia Audiovisual</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Plus+Jakarta+Sans:wght@200;400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;900&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #ffffff; }
-        body { background-color: #000; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         .font-serif { font-family: 'Playfair Display', serif; }
-
-        /* Capa de carga épica */
-        .loader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; z-index: 100; display: flex; align-items: center; justify-content: center;
-            transition: opacity 1s ease;
-        }
-
-        /* Video de fondo con efecto cine */
-        .video-bg {
+        
+        /* Video de fondo con respaldo de color */
+        .video-wrapper {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; z-index: -1; filter: brightness(0.4) contrast(1.2);
+            z-index: -1; background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
         }
+        video { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: contrast(1.1); }
 
+        /* Títulos de impacto cinematográfico */
         .hero-title {
-            font-size: clamp(3rem, 15vw, 12rem);
-            line-height: 0.8;
-            letter-spacing: -0.05em;
-            text-transform: uppercase;
+            font-size: clamp(3rem, 12vw, 10rem);
+            line-height: 0.85;
+            letter-spacing: -0.04em;
         }
 
-        .glass-nav {
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
+        /* Botón estilo Vanguardia */
         .btn-pixel {
-            background: var(--accent);
-            color: #000;
-            padding: 1.5rem 3rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 20px 40px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 10px;
+            transition: 0.5s;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
         }
-
         .btn-pixel:hover {
-            transform: scale(1.05) rotate(-2deg);
-            box-shadow: 0 0 50px rgba(255,255,255,0.4);
+            background: #fff; color: #000;
+            box-shadow: 0 0 50px rgba(255,255,255,0.5);
         }
 
-        /* Animación de revelado */
-        .reveal { animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1); }
-        @keyframes reveal {
-            from { transform: translateY(100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        /* Tarjetas de servicios minimalistas */
+        .service-card {
+            border-left: 1px solid rgba(255,255,255,0.1);
+            padding: 40px;
+            transition: 0.5s;
         }
+        .service-card:hover { border-left-color: #fff; background: rgba(255,255,255,0.02); }
     </style>
 </head>
 <body>
 
-    <nav class="glass-nav fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center">
+    <nav class="fixed top-0 w-full z-50 px-10 py-8 flex justify-between items-center mix-blend-difference">
         <div class="flex items-center gap-4">
-            <img src="./img/logo.png" alt="PixelDB" class="h-10 md:h-12 w-auto" onerror="this.style.display='none'">
-            <span class="text-xl font-extrabold tracking-tighter">PIXELDB <span class="font-light opacity-50">STUDIO</span></span>
+            <img src="img/logo.png" alt="PixelDB" class="h-10 w-auto" onerror="this.src='https://via.placeholder.com/150?text=PIXELDB'">
+            <span class="font-black tracking-tighter text-xl uppercase">PixelDB</span>
         </div>
-        <a href="https://wa.me/593994223768" target="_blank" class="text-xs font-bold tracking-widest uppercase border border-white/20 px-6 py-2 hover:bg-white hover:text-black transition">Contacto</a>
+        <a href="https://wa.me/593994223768" target="_blank" class="text-[10px] tracking-[4px] uppercase border-b border-white/20 pb-1">Contacto</a>
     </nav>
 
-    <main class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        
-        <video autoplay muted loop playsinline class="video-bg">
-            <source src="./videos/hero-bg.mp4" type="video/mp4">
-        </video>
-
-        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
-
-        <div class="relative z-10 text-center px-4">
-            <p class="text-xs md:text-sm tracking-[1em] uppercase mb-8 opacity-60 reveal">Ibarra, Ecuador</p>
-            <h1 class="hero-title font-serif reveal">
-                PIXEL<span class="italic">DB</span>
-            </h1>
-            <p class="mt-8 text-lg md:text-2xl font-light max-w-3xl mx-auto reveal opacity-80">
-                Donde la imagen se convierte en <span class="font-serif italic border-b border-white/30">historia.</span>
-            </p>
-            
-            <div class="mt-12 reveal" style="animation-delay: 0.3s;">
-                <a href="https://wa.me/593994223768" target="_blank" class="btn-pixel inline-block">
-                    INICIAR PROYECTO
-                </a>
-            </div>
+    <header class="relative h-screen w-full flex items-center px-10 md:px-20 overflow-hidden">
+        <div class="video-wrapper">
+            <video autoplay muted loop playsinline>
+                <source src="videos/hero-bg.mp4" type="video/mp4">
+            </video>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30 animate-bounce">
-            <span class="text-[10px] tracking-[4px] uppercase">Scroll</span>
+        <div class="max-w-5xl">
+            <p class="text-[10px] tracking-[1em] uppercase opacity-40 mb-6">Ibarra — Ecuador</p>
+            <h1 class="hero-title font-serif italic mb-10">Narrativa <br> <span class="not-italic">Visual.</span></h1>
+            <a href="https://wa.me/593994223768" target="_blank" class="btn-pixel">Iniciar Producción</a>
         </div>
-    </main>
+    </header>
 
-    <section class="py-32 bg-white text-black text-center px-6">
-        <h2 class="font-serif text-3xl md:text-6xl italic leading-tight max-w-5xl mx-auto">
+    <section class="py-40 px-10 bg-white text-black">
+        <h2 class="font-serif text-4xl md:text-7xl italic leading-tight max-w-6xl">
             "No grabamos eventos, creamos recuerdos que se vuelven eternos."
         </h2>
     </section>
+
+    <section class="py-32 px-10 bg-black">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+            <div class="service-card">
+                <span class="text-xs opacity-30 mb-10 block">01 / PRODUCCIÓN</span>
+                <h3 class="text-2xl font-serif italic mb-4">Cinematografía</h3>
+                <p class="text-sm opacity-50 font-light">Documentales, spots y cobertura de eventos con narrativa de autor.</p>
+            </div>
+            <div class="service-card">
+                <span class="text-xs opacity-30 mb-10 block">02 / INNOVACIÓN</span>
+                <h3 class="text-2xl font-serif italic mb-4">IA & Generativa</h3>
+                <p class="text-sm opacity-50 font-light">Producción híbrida y animación con inteligencia artificial.</p>
+            </div>
+            <div class="service-card">
+                <span class="text-xs opacity-30 mb-10 block">03 / CAPTURA</span>
+                <h3 class="text-2xl font-serif italic mb-4">Aérea & Foto</h3>
+                <p class="text-sm opacity-50 font-light">Fotografía profesional y video con drone en resolución 4K.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 px-10 border-t border-white/10 text-center">
+        <p class="text-[10px] tracking-[5px] uppercase opacity-20">© 2026 PixelDB Studio</p>
+    </footer>
 
 </body>
 </html>
