@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PixelDB Studio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    background: black;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    z-index: -1;
+  }
+
+  .glass {
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.4);
+  }
+</style>
+</head>
+
+<body class="text-white">
+
+<!-- HERO -->
+<section class="h-screen flex flex-col justify-center items-center text-center relative">
+
+  <video autoplay muted loop class="video-bg">
+    <source src="https://cdn.coverr.co/videos/coverr-stage-lighting-1575/1080p.mp4" type="video/mp4">
+  </video>
+
+  <h1 class="text-6xl md:text-8xl font-bold text-yellow-400 tracking-widest animate-pulse">
+    PIXELDB
+  </h1>
+
+  <p class="text-xl md:text-2xl text-gray-300 mt-4">
+    Donde la imagen se convierte en historia
+  </p>
+
+  <a href="#contacto" class="mt-8 bg-yellow-400 text-black px-8 py-3 rounded-full font-bold hover:scale-110 transition">
+    🎬 Crear mi evento
+  </a>
+
+</section>
+
+<!-- STORY -->
+<section class="py-20 px-6 text-center bg-black">
+  <h2 class="text-4xl text-yellow-400 font-bold mb-6">No grabamos eventos...</h2>
+  <p class="text-2xl text-gray-300 max-w-3xl mx-auto">
+    Creamos recuerdos que vuelven a latir cada vez que presionas “play”.
+  </p>
+</section>
+
+<!-- SERVICIOS -->
+<section class="py-20 px-6 bg-gray-950">
+
+  <h2 class="text-4xl text-yellow-400 font-bold text-center mb-6">
+    Ecosistema Creativo PixelDB
+  </h2>
+
+  <p class="text-center text-gray-400 max-w-3xl mx-auto mb-12">
+    Integramos creatividad, tecnología y narrativa para transformar cualquier idea en impacto real.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-10">
+
+    <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-bold mb-3 text-yellow-400">🎬 Producción & Narrativa</h3>
+      <ul class="text-gray-400 text-sm space-y-2">
+        <li>Producción cinematográfica</li>
+        <li>Documentales</li>
+        <li>Spots publicitarios</li>
+        <li>Videos institucionales</li>
+        <li>Coberturas</li>
+      </ul>
+    </div>
+
+    <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-bold mb-3 text-yellow-400">🎧 Audio & Voz</h3>
+      <ul class="text-gray-400 text-sm space-y-2">
+        <li>Locución comercial</li>
+        <li>Doblaje</li>
+        <li>Cuñas y jingles</li>
+        <li>Audio binaural</li>
+      </ul>
+    </div>
+
+    <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-bold mb-3 text-yellow-400">✨ Experiencias Visuales</h3>
+      <ul class="text-gray-400 text-sm space-y-2">
+        <li>Video mapping</li>
+        <li>Pantallas LED</li>
+        <li>Proyección</li>
+        <li>Broadcast</li>
+      </ul>
+    </div>
+
+    <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-bold mb-3 text-yellow-400">📲 Comunicación</h3>
+      <ul class="text-gray-400 text-sm space-y-2">
+        <li>Comunicación integral</li>
+        <li>Gestión de redes</li>
+        <li>Estrategia digital</li>
+      </ul>
+    </div>
+
+    <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-bold mb-3 text-yellow-400">📸 Captura</h3>
+      <ul class="text-gray-400 text-sm space-y-2">
+        <li>Fotografía</li>
+        <li>Drone</li>
+        <li>Eventos sociales</li>
+      </ul>
+    </div>
+
+    <div class="glass p-6 rounded-2xl border border-yellow-400">
+      <h3 class="text-xl font-bold mb-3 text-yellow-400">🤖 Innovación</h3>
+      <ul class="text-gray-300 text-sm space-y-2">
+        <li>Producción con IA</li>
+        <li>Animación generativa</li>
+        <li>Experiencias híbridas</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PAQUETES -->
+<section class="py-20 px-6 text-center bg-black">
+
+  <h2 class="text-4xl text-yellow-400 font-bold mb-12">Paquetes</h2>
+
+  <div class="grid md:grid-cols-3 gap-10">
+
+    <div class="border border-gray-700 p-6 rounded-2xl">
+      <h3 class="text-2xl font-bold mb-4">Momento</h3>
+      <p class="text-gray-400">Cobertura esencial profesional</p>
+    </div>
+
+    <div class="border border-yellow-400 p-6 rounded-2xl scale-105">
+      <h3 class="text-2xl font-bold mb-4 text-yellow-400">Emoción</h3>
+      <p class="text-gray-300">Narrativa cinematográfica</p>
+    </div>
+
+    <div class="border border-gray-700 p-6 rounded-2xl">
+      <h3 class="text-2xl font-bold mb-4">Legado</h3>
+      <p class="text-gray-400">Experiencia completa premium</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="py-20 text-center bg-gradient-to-r from-yellow-400 to-yellow-600 text-black">
+  <h2 class="text-4xl font-bold mb-4">Tu evento merece ser película</h2>
+  <p class="mb-6">Hazlo inolvidable con PixelDB Studio</p>
+  <a href="#contacto" class="bg-black text-yellow-400 px-8 py-3 rounded-full font-bold">
+    Reservar ahora
+  </a>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-20 text-center bg-black">
+
+  <h2 class="text-4xl text-yellow-400 font-bold mb-6">Contacto</h2>
+
+  <p class="text-gray-400">📍 Ibarra, Ecuador</p>
+  <p class="text-gray-400">📞 +593 994 223 768</p>
+  <p class="text-gray-400">✉️ pixeldbstudio@gmail.com</p>
+
+  <div class="mt-6 space-x-4">
+    <a href="https://wa.me/593994223768" target="_blank"
+       class="bg-green-500 px-6 py-3 rounded-full font-bold inline-block">
+       💬 WhatsApp
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=61582240490675" target="_blank"
+       class="bg-blue-600 px-6 py-3 rounded-full font-bold inline-block">
+       👍 Facebook
+    </a>
+  </div>
+
+</section>
+
+<!-- BOTÓN FLOTANTE -->
+<a href="https://wa.me/593994223768"
+   class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-lg">
+   💬
+</a>
+
+<footer class="text-center py-6 bg-gray-900 text-gray-500">
+  © 2026 PixelDB Studio
+</footer>
+
+</body>
+</html>
