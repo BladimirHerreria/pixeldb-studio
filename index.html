@@ -1,159 +1,203 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PixelDB Studio | Cine & Comunicación</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="/logo.png" type="image/png">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PixelDB Studio | Donde la imagen se convierte en historia</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" href="/logo.png" type="image/png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
-    body {
-      font-family: 'Roboto Mono', monospace;
-      scroll-behavior: smooth;
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-      overflow-x: hidden;
-    }
+body {
+  font-family: 'Roboto Mono', monospace;
+  scroll-behavior: smooth;
+  background-color: #0f0f0f;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
 
-    .gradient-text {
-      background: linear-gradient(90deg, #00b4d8, #ffb703);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+/* Hero cinematográfico */
+.hero-bg {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    /* Hero Cinemático */
-    .hero-bg {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+.hero-bg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
 
-    .hero-bg video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-    }
+.gradient-text {
+  background: linear-gradient(90deg, #00b4d8, #ffb703);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s ease-out;
-    }
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    /* Microinteracciones */
-    .btn-gradient {
-      background: linear-gradient(90deg, #00b4d8, #ffb703);
-      color: black;
-      font-weight: 700;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      transition: all 0.3s ease;
-    }
+.btn-gradient {
+  background: linear-gradient(90deg, #00b4d8, #ffb703);
+  color: black;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
 
-    .btn-gradient:hover {
-      transform: scale(1.05) rotateZ(-1deg);
-      box-shadow: 0 10px 20px rgba(255,183,3,0.5);
-    }
+.btn-gradient:hover {
+  transform: scale(1.05) rotateZ(-1deg);
+  box-shadow: 0 10px 20px rgba(255,183,3,0.5);
+}
 
-    /* Parallax Sections */
-    .parallax {
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-    }
-
-  </style>
+/* Parallax sections */
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+</style>
 </head>
 <body>
 
-  <!-- HERO CINEMÁTICO -->
-  <section class="hero-bg">
-    <video autoplay muted loop>
-      <source src="/hero-bg.mp4" type="video/mp4">
-    </video>
-    <div class="z-10 flex flex-col items-center justify-center px-6">
-      <img src="/logo.png" alt="PixelDB Studio Logo" class="w-40 mb-6 animate-pulse">
-      <h1 class="text-5xl md:text-7xl font-bold gradient-text mb-4">PixelDB Studio</h1>
-      <p class="text-xl md:text-2xl max-w-xl mx-auto">Transformamos ideas en experiencias audiovisuales memorables</p>
-      <a href="#services" class="mt-10 btn-gradient">Explora nuestros servicios</a>
+<!-- HERO CINEMÁTICO -->
+<section class="hero-bg">
+  <video autoplay muted loop>
+    <source src="/hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="z-10 flex flex-col items-center justify-center px-6">
+    <img src="/logo.png" alt="PixelDB Studio Logo" class="w-40 mb-6 animate-pulse">
+    <h1 class="text-5xl md:text-7xl font-bold gradient-text mb-4">PixelDB Studio</h1>
+    <p class="text-xl md:text-2xl max-w-xl mx-auto">Donde la imagen se convierte en historia</p>
+    <a href="#services" class="mt-10 btn-gradient">Explora nuestros servicios</a>
+  </div>
+</section>
+
+<!-- FRASES POTENTES -->
+<section class="py-16 px-6 md:px-20 text-center">
+  <h2 class="text-4xl font-bold mb-8 gradient-text fade-in">Inspiramos cada historia</h2>
+  <div class="space-y-4 max-w-3xl mx-auto">
+    <p class="fade-in italic">“No grabamos eventos, creamos recuerdos que se vuelven eternos.”</p>
+    <p class="fade-in italic">“Transformamos ideas en experiencias visuales.”</p>
+    <p class="fade-in italic">“Tu evento merece ser película.”</p>
+    <p class="fade-in italic">“Tecnología, narrativa y emoción en un solo lugar.”</p>
+  </div>
+</section>
+
+<!-- SERVICIOS COMPLETOS -->
+<section id="services" class="py-24 px-6 md:px-20 parallax" style="background-image: url('/services-bg.jpg');">
+  <h2 class="text-4xl font-bold text-center mb-16 gradient-text fade-in">Servicios</h2>
+  <div class="grid md:grid-cols-3 gap-10">
+    <div class="bg-black/70 p-8 rounded-xl shadow-xl hover:scale-105 transition-transform fade-in">
+      <h3 class="text-2xl font-bold mb-4 gradient-text">Producción & Video</h3>
+      <ul class="list-disc list-inside">
+        <li>Producción cinematográfica</li>
+        <li>Documentales</li>
+        <li>Spots publicitarios</li>
+        <li>Videos institucionales</li>
+        <li>Coberturas de eventos</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- SERVICIOS CON PARALLAX -->
-  <section id="services" class="py-24 px-6 md:px-20 parallax" style="background-image: url('/services-bg.jpg');">
-    <h2 class="text-4xl font-bold text-center mb-16 gradient-text fade-in">Servicios Premium</h2>
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="bg-black/70 p-8 rounded-xl shadow-xl hover:scale-105 transition-transform fade-in">
-        <h3 class="text-2xl font-bold mb-4 gradient-text">Producción Audiovisual</h3>
-        <p>Cinematografía de eventos, corporativos y proyectos creativos, con tecnología de vanguardia.</p>
-      </div>
-      <div class="bg-black/70 p-8 rounded-xl shadow-xl hover:scale-105 transition-transform fade-in">
-        <h3 class="text-2xl font-bold mb-4 gradient-text">Eventos y DJ</h3>
-        <p>Cobertura completa de bodas, fiestas, divorcios y eventos sociales con audio profesional y drones.</p>
-      </div>
-      <div class="bg-black/70 p-8 rounded-xl shadow-xl hover:scale-105 transition-transform fade-in">
-        <h3 class="text-2xl font-bold mb-4 gradient-text">Pantallas LED</h3>
-        <p>Alquiler y venta de pantallas LED con diseño y comunicación integral para tu evento o negocio.</p>
-      </div>
+    <div class="bg-black/70 p-8 rounded-xl shadow-xl hover:scale-105 transition-transform fade-in">
+      <h3 class="text-2xl font-bold mb-4 gradient-text">Audio & Voz</h3>
+      <ul class="list-disc list-inside">
+        <li>Locución comercial</li>
+        <li>Doblaje</li>
+        <li>Cuñas radiales</li>
+        <li>Jingles</li>
+        <li>Producción de audio binaural</li>
+      </ul>
     </div>
-  </section>
+    <div class="bg-black/70 p-8 rounded-xl shadow-xl hover:scale-105 transition-transform fade-in">
+      <h3 class="text-2xl font-bold mb-4 gradient-text">Experiencias Visuales</h3>
+      <ul class="list-disc list-inside">
+        <li>Video mapping</li>
+        <li>Pantallas LED (alquiler)</li>
+        <li>Proyección & Broadcast</li>
+      </ul>
+    </div>
+    <div class="bg-black/70 p-8 rounded-xl shadow-xl hover:scale-105 transition-transform fade-in">
+      <h3 class="text-2xl font-bold mb-4 gradient-text">Captura</h3>
+      <ul class="list-disc list-inside">
+        <li>Fotografía profesional</li>
+        <li>Video con drone</li>
+        <li>Eventos sociales</li>
+      </ul>
+    </div>
+    <div class="bg-black/70 p-8 rounded-xl shadow-xl hover:scale-105 transition-transform fade-in">
+      <h3 class="text-2xl font-bold mb-4 gradient-text">Comunicación</h3>
+      <ul class="list-disc list-inside">
+        <li>Comunicación integral</li>
+        <li>Gestión de redes sociales</li>
+        <li>Estrategia digital</li>
+      </ul>
+    </div>
+    <div class="bg-black/70 p-8 rounded-xl shadow-xl hover:scale-105 transition-transform fade-in">
+      <h3 class="text-2xl font-bold mb-4 gradient-text">Innovación</h3>
+      <ul class="list-disc list-inside">
+        <li>Producción con IA</li>
+        <li>Animación generativa</li>
+        <li>Experiencias híbridas</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <!-- SOBRE NOSOTROS -->
-  <section class="py-24 px-6 md:px-20 text-center">
-    <h2 class="text-4xl font-bold mb-6 gradient-text fade-in">Nuestra Filosofía</h2>
-    <p class="max-w-3xl mx-auto text-lg leading-relaxed fade-in">
-      PixelDB Studio nace de la pasión por contar historias con imágenes y sonidos. Más de 20 años de experiencia nos permiten entregar proyectos que impactan, conectan y permanecen en la memoria de tu audiencia.
-    </p>
-  </section>
+<!-- CONTACTO & BOTONES -->
+<section id="contact" class="py-24 px-6 md:px-20 text-center bg-gray-900">
+  <h2 class="text-4xl font-bold mb-6 gradient-text fade-in">Contáctanos</h2>
+  <p class="mb-4 fade-in">📍 Ibarra, Ecuador</p>
+  <p class="mb-4 fade-in">📞 <a href="https://wa.me/593994223768" class="btn-gradient">WhatsApp Directo</a></p>
+  <p class="mb-8 fade-in">📧 <a href="mailto:pixeldbstudio@gmail.com" class="btn-gradient">pixeldbstudio@gmail.com</a></p>
+  <p class="fade-in">🔗 <a href="https://www.facebook.com/profile.php?id=61582240490675" class="underline hover:text-yellow-400">Facebook</a></p>
+</section>
 
-  <!-- CONTACTO -->
-  <section id="contact" class="py-24 px-6 md:px-20 bg-gradient-to-r from-black via-gray-900 to-black text-center">
-    <h2 class="text-4xl font-bold mb-6 gradient-text fade-in">Contáctanos</h2>
-    <p class="mb-8 fade-in">Ibarra, Ecuador | +593 999 999 999 | contacto@pixeldbstudio.com</p>
-    <a href="mailto:contacto@pixeldbstudio.com" class="btn-gradient fade-in">Escríbenos Ahora</a>
-  </section>
+<!-- FOOTER -->
+<footer class="py-10 text-center text-gray-400">
+  © 2026 PixelDB Studio. Todos los derechos reservados.
+</footer>
 
-  <!-- FOOTER -->
-  <footer class="py-10 text-center text-gray-400">
-    © 2026 PixelDB Studio. Todos los derechos reservados.
-  </footer>
-
-  <script>
-    // Animación fade-in al hacer scroll
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, appearOptions);
-    faders.forEach(fader => appearOnScroll.observe(fader));
-
-    // Parallax simple
-    window.addEventListener('scroll', () => {
-      const parallax = document.querySelectorAll('.parallax');
-      parallax.forEach(section => {
-        let offset = window.pageYOffset;
-        section.style.backgroundPositionY = offset * 0.5 + "px";
-      });
+<script>
+  // Animación fade-in
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
     });
-  </script>
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+
+  // Parallax simple
+  window.addEventListener('scroll', () => {
+    const parallax = document.querySelectorAll('.parallax');
+    parallax.forEach(section => {
+      let offset = window.pageYOffset;
+      section.style.backgroundPositionY = offset * 0.5 + "px";
+    });
+  });
+</script>
 
 </body>
 </html>
