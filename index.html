@@ -3,62 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PixelDB Studio | Donde la imagen se convierte en historia</title>
+    <title>PixelDB Studio | Vanguardia Audiovisual</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,900&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Plus+Jakarta+Sans:wght@200;400;800&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
+        :root { --accent: #ffffff; }
+        body { background-color: #000; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
         .font-serif { font-family: 'Playfair Display', serif; }
-        
-        /* Animación de entrada suave */
-        .fade-in { animation: fadeIn 2.5s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .btn-glow {
-            background: #fff; color: #000; padding: 14px 32px;
-            font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
-            font-weight: 700; transition: 0.4s; box-shadow: 0 0 15px rgba(255,255,255,0.3);
-            display: inline-block;
+        /* Capa de carga épica */
+        .loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 100; display: flex; align-items: center; justify-content: center;
+            transition: opacity 1s ease;
         }
-        .btn-glow:hover { box-shadow: 0 0 40px rgba(255,255,255,0.7); transform: scale(1.05); }
+
+        /* Video de fondo con efecto cine */
+        .video-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -1; filter: brightness(0.4) contrast(1.2);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 15vw, 12rem);
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+
+        .glass-nav {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn-pixel {
+            background: var(--accent);
+            color: #000;
+            padding: 1.5rem 3rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+            transition: 0.3s;
+        }
+
+        .btn-pixel:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 0 50px rgba(255,255,255,0.4);
+        }
+
+        /* Animación de revelado */
+        .reveal { animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1); }
+        @keyframes reveal {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
 </head>
-<body class="fade-in">
+<body>
 
-    <nav class="flex justify-between items-center px-8 py-6 fixed w-full z-50 mix-blend-difference text-white">
-        <img src="img/logo.png" alt="PixelDB Studio" class="h-10 md:h-14 w-auto"> 
-        <div class="hidden md:flex space-x-8 text-[10px] tracking-[4px] uppercase opacity-70">
-            <a href="https://wa.me/593994223768" target="_blank" class="hover:opacity-100 transition border-b border-white/20 pb-1">WhatsApp</a>
+    <nav class="glass-nav fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <img src="./img/logo.png" alt="PixelDB" class="h-10 md:h-12 w-auto" onerror="this.style.display='none'">
+            <span class="text-xl font-extrabold tracking-tighter">PIXELDB <span class="font-light opacity-50">STUDIO</span></span>
         </div>
+        <a href="https://wa.me/593994223768" target="_blank" class="text-xs font-bold tracking-widest uppercase border border-white/20 px-6 py-2 hover:bg-white hover:text-black transition">Contacto</a>
     </nav>
 
-    <section class="relative h-screen w-full overflow-hidden flex flex-col justify-center px-8 md:px-24">
-        <div class="absolute top-0 left-0 w-full h-full -z-10 bg-black">
-            <video autoplay muted loop playsinline class="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-50">
-                <source src="videos/hero-bg.mp4" type="video/mp4">
-            </video>
-            <div class="absolute top-0 left-0 w-full h-full bg-black/30 backdrop-blur-[1px]"></div>
-        </div>
+    <main class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        
+        <video autoplay muted loop playsinline class="video-bg">
+            <source src="./videos/hero-bg.mp4" type="video/mp4">
+        </video>
 
-        <div class="relative z-10">
-            <h2 class="text-[10px] uppercase tracking-[1em] text-white/40 mb-6 italic">Ibarra — Ecuador</h2>
-            <h1 class="font-serif text-5xl md:text-9xl mb-8 leading-tight italic">Narrativa <br> <span class="text-white">Visual.</span></h1>
-            <p class="max-w-xl text-gray-300 text-lg font-light mb-12">
-                "Donde la imagen se convierte en historia." <br>
-                Producción audiovisual de alto impacto.
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
+
+        <div class="relative z-10 text-center px-4">
+            <p class="text-xs md:text-sm tracking-[1em] uppercase mb-8 opacity-60 reveal">Ibarra, Ecuador</p>
+            <h1 class="hero-title font-serif reveal">
+                PIXEL<span class="italic">DB</span>
+            </h1>
+            <p class="mt-8 text-lg md:text-2xl font-light max-w-3xl mx-auto reveal opacity-80">
+                Donde la imagen se convierte en <span class="font-serif italic border-b border-white/30">historia.</span>
             </p>
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-8">
-                <a href="https://wa.me/593994223768" target="_blank" class="btn-glow">Hagamos Película</a>
-                <div class="flex gap-6">
-                    <a href="https://www.facebook.com/profile.php?id=61582240490675" target="_blank" class="text-[10px] tracking-[4px] uppercase opacity-50 hover:opacity-100 transition">Facebook</a>
-                </div>
+            
+            <div class="mt-12 reveal" style="animation-delay: 0.3s;">
+                <a href="https://wa.me/593994223768" target="_blank" class="btn-pixel inline-block">
+                    INICIAR PROYECTO
+                </a>
             </div>
         </div>
-    </section>
 
-    <footer class="py-10 text-center border-t border-white/5 opacity-30 text-[10px] tracking-[3px] uppercase">
-        © 2026 PixelDB Studio — Vanguardia Audiovisual
-    </footer>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30 animate-bounce">
+            <span class="text-[10px] tracking-[4px] uppercase">Scroll</span>
+        </div>
+    </main>
+
+    <section class="py-32 bg-white text-black text-center px-6">
+        <h2 class="font-serif text-3xl md:text-6xl italic leading-tight max-w-5xl mx-auto">
+            "No grabamos eventos, creamos recuerdos que se vuelven eternos."
+        </h2>
+    </section>
 
 </body>
 </html>
